@@ -29,7 +29,7 @@ function Popular() {
                     arrows: true,
                     pagination: true,
                     drag: 'free',
-                    gap: '5rem',
+                    gap: '4rem',
                 }}>
                     {popular.map((recipe) => {
                         return (
@@ -37,6 +37,7 @@ function Popular() {
                             <Card>
                                 <p>{recipe.title}</p>
                                 <img src={recipe.image} alt={recipe.title} />
+                                <Gradient />
                             </Card>
                             </SplideSlide>
                         );
@@ -52,7 +53,7 @@ const Wrapper = styled.div`
 `;
 
 const Card = styled.div`
-    min-height: 25rem;
+    min-height: 20rem;
     border-radius: 2rem;
     overflow: hidden;
     position: relative;
@@ -82,6 +83,14 @@ const Card = styled.div`
         justify-content: center;
         align-items: center;
     }
+`;
+
+const Gradient = styled.div`
+    z-index: 3;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
 `;
 
 export default Popular;
